@@ -1,0 +1,116 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "luis@teste.com",
+      "senha": "123"
+    },
+    {
+      "id": "2",
+      "email": "usuario2@exemplo.com",
+      "senha": "senha456"
+    },
+    {
+      "id": "3",
+      "email": "usuario3@exemplo.com",
+      "senha": "senha789"
+    },
+    {
+      "id": "6c33",
+      "email": "luis@teste1.com",
+      "senha": "123"
+    },
+    {
+      "id": "9d94",
+      "email": "aaa@aaa",
+      "senha": "123"
+    },
+    {
+      "id": "c2f9",
+      "email": "aaaa@32132131",
+      "senha": "123"
+    },
+    {
+      "id": "bb83",
+      "email": "aaaa@tetea",
+      "senha": "123"
+    },
+    {
+      "id": "e598",
+      "email": "luis@teste12.com",
+      "senha": "123"
+    },
+    {
+      "id": "d5cd",
+      "email": "luis@teste124.com",
+      "senha": "123"
+    },
+    {
+      "id": "b594",
+      "email": "luis@teste1245.com",
+      "senha": "123"
+    },
+    {
+      "id": "bfcc",
+      "email": "luis@teste5.com",
+      "senha": "123"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "nomeProduto": "Air Jordan 1 Low OG Wolf Grey and White",
+      "precoProduto": 100
+    },
+    {
+      "id": "2",
+      "nomeProduto": "Tenis 2",
+      "precoProduto": 200
+    },
+    {
+      "id": "3",
+      "nomeProduto": "Tenis 3",
+      "precoProduto": 250
+    },
+    {
+      "id": "4",
+      "nomeProduto": "Tenis 4",
+      "precoProduto": 200
+    },
+    {
+      "id": "5",
+      "nomeProduto": "Tenis 5",
+      "precoProduto": 200
+    }
+  ],
+  "cart": [
+    {
+      "id": "7a53",
+      "emailUsuario": "",
+      "nomeProduto": "Air Jordan 1 Low OG Wolf Grey and White",
+      "precoProduto": 100,
+      "idProduto": "1"
+    },
+    {
+      "id": "478b",
+      "emailUsuario": "",
+      "nomeProduto": "Tenis 3",
+      "precoProduto": 250,
+      "idProduto": "3"
+    },
+    {
+      "id": "acc7",
+      "emailUsuario": "",
+      "nomeProduto": "Tenis 3",
+      "precoProduto": 250,
+      "idProduto": "3"
+    },
+    {
+      "id": "b20b",
+      "emailUsuario": "",
+      "nomeProduto": "Tenis 5",
+      "precoProduto": 200,
+      "idProduto": "5"
+    }
+  ]
+}
