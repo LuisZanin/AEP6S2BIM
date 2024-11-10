@@ -21,8 +21,7 @@ class _CartScreenState extends State<CartScreen> {
   }
 
   Future<void> _loadCartItems() async {
-    final userService = UserService();
-    await _cartController.loadCartItems(userService.loggedUserEmail);
+    await _cartController.loadCartItems(UserService.loggedUserEmail);
     if (mounted) {
       setState(() {});
     }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:snksstore/models/cart_model.dart';
 import '../models/product_model.dart';
+import '../service/cart_service.dart';
 import '../service/product_service.dart';
 import '../components/product_card.dart';
 import '../controller/cart_controller.dart';
@@ -48,10 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
 void _addToCart(Product product) async {
   final cartController = CartController();
-  final userService = UserService();
   try {
     await cartController.addToCart(
-      emailUsuario: userService.loggedUserEmail,
+      emailUsuario: UserService.loggedUserEmail,
       nomeProduto: product.nomeProduto,
       precoProduto: product.precoProduto,
       idProduto: product.id,
@@ -62,11 +63,6 @@ void _addToCart(Product product) async {
         SnackBar(
           content: Text('${product.nomeProduto} adicionado ao carrinho'),
           duration: const Duration(seconds: 2),
-          action: SnackBarAction(
-            label: 'DESFAZER',
-            onPressed: () {
-            },
-          ),
         ),
       );
     }

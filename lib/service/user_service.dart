@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class UserService {
   final String baseUrl = 'http://10.0.2.2:3000';
-  late String loggedUserEmail = "";
+  static String loggedUserEmail = "";
 
   Future<bool> authenticateUser(String email, String password) async {
     final url = Uri.parse('$baseUrl/users?email=$email&senha=$password');
