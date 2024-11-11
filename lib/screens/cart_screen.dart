@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:snksstore/components/app_header.dart';
 import 'package:snksstore/service/user_service.dart';
 import '../controller/cart_controller.dart';
-import 'login_screen.dart';
-import 'home_screen.dart';
+
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -51,48 +51,7 @@ class _CartScreenState extends State<CartScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Header
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const HomeScreen()),
-                      );
-                    },
-                    child: const Text(
-                      'Snks',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()),
-                      );
-                    },
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey[300],
-                      ),
-                      child: const Icon(Icons.person, color: Colors.black),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
+            const AppHeader(showLoginButton: false, showReturnButton: true,),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Align(
@@ -106,13 +65,9 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ),
             ),
-
-            // Lista de produtos no carrinho
             Expanded(
               child: _buildCartList(),
             ),
-
-            // Total e botão de finalizar
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(

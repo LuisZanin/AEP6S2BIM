@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../controller/register_controller.dart';
+import '../controller/registeruser_controller.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -26,13 +26,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
-    String? success = await _registerController.registerUser(email, password);
-    if (success == "Certinho") {
+    Object? success = await _registerController.registerUser(email, password);
+    if (success == true) {
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Usuário criado com sucesso!')),
       );
-    } else if ("Email em Uso" == success) {
+    } else if (success == false) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Email Já está sendo utilizado')),
       );

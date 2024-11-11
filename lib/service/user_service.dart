@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+import '../models/user_model.dart';
+
 class UserService {
   final String baseUrl = 'http://10.0.2.2:3000';
   static String loggedUserEmail = "";
@@ -13,7 +15,7 @@ class UserService {
       if (response.statusCode == 200) {
         final List<dynamic> users = json.decode(response.body);
         loggedUserEmail = email.toLowerCase();
-        print(loggedUserEmail);
+        
         return users.length == 1;
       } else {
         print('Erro ao buscar usuário: ${response.statusCode}');
@@ -25,7 +27,10 @@ class UserService {
     }
   }
 
-  Future<bool> createUser(String email, String password) async {
+  Future<User> createUser({
+    required String email,
+    required String password,
+    }) async {
     final url = Uri.parse('$baseUrl/users');
 
     try {
@@ -39,15 +44,12 @@ class UserService {
       );
 
       if (response.statusCode == 201) {
-        print("Usuário criado com sucesso");
-        return true;
+        return User.fromJson(json.decode(response.body));
       } else {
-        print("Erro ao criar usuário: ${response.statusCode}");
-        return false;
+        throw Exception('Erro ao criar usuário: ${response.statusCode}');
       }
     } catch (e) {
-      print("Erro na requisição: $e");
-      return false;
+      throw Exception('Erro na requisição: $e');
     }
   }
 

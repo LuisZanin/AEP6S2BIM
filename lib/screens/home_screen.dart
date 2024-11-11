@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:snksstore/models/cart_model.dart';
+import 'package:snksstore/components/app_header.dart';
+import '../screens/product_screen.dart';
 import '../models/product_model.dart';
-import '../service/cart_service.dart';
 import '../service/product_service.dart';
 import '../components/product_card.dart';
 import '../controller/cart_controller.dart';
 import '../service/user_service.dart';
-import 'login_screen.dart';
 import 'cart_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -84,39 +83,7 @@ void _addToCart(Product product) async {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Snks',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()),
-                      );
-                    },
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey[300],
-                      ),
-                      child: const Icon(Icons.person, color: Colors.black),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
+            const AppHeader(),
             const Padding(
               padding: EdgeInsets.all(16.0),
               child: Align(
@@ -130,7 +97,6 @@ void _addToCart(Product product) async {
                 ),
               ),
             ),
-
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Align(
@@ -183,11 +149,9 @@ void _addToCart(Product product) async {
                   ),
                   InkWell(
                     onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Área administrativa em desenvolvimento'),
-                          duration: Duration(seconds: 2),
-                        ),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const ProductScreen()),
                       );
                     },
                     child: Container(
