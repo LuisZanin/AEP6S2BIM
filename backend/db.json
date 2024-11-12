@@ -117,5 +117,28 @@
       "precoProduto": 200,
       "idProduto": "4c42"
     }
+  ],
+  "log": [
+    {
+      "id": "1",
+      "idUsuario": "1",
+      "emailUsuarioLogado": "teste@luis.com",
+      "dataSessao": "2021-08-25T00:00:00.000Z",
+      "vezesLogadoHoje": 1
+    },
+    {
+      "id": null,
+      "idUsuario": "4722",
+      "emailUsuarioLogado": "teste@luis.com",
+      "dataSessao": "2024-11-12T01:58:26.356607",
+      "vezesLogadoHoje": 1
+    },
+    {
+      "id": null,
+      "idUsuario": "4722",
+      "emailUsuarioLogado": "teste@luis.com",
+      "dataSessao": "2024-11-12T01:59:26.621509",
+      "vezesLogadoHoje": 1
+    }
   ]
 }

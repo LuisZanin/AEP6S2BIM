@@ -16,4 +16,13 @@ class User {
       senha: json['senha'],
     );
   }
+
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'email': email,
+      'senha': senha,
+    };
+  }
 }
