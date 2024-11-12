@@ -3,9 +3,6 @@ import 'package:http/http.dart' as http;
 import '../models/user_model.dart';
 import '../models/log_model.dart';
 
-
-import '../models/user_model.dart';
-
 class UserService {
   final String baseUrl = 'http://10.0.2.2:3000';
   static String loggedUserEmail = "";
@@ -19,7 +16,6 @@ class UserService {
         final List<dynamic> users = json.decode(response.body);
         if (users.length == 1) {
           loggedUserEmail = email.toLowerCase();
-          // Registrar o log após autenticação bem-sucedida
           await registerLoginLog(users[0]['id']);
           return true;
         }
@@ -38,7 +34,6 @@ class UserService {
     final today = DateTime.now();
     final todayStart = DateTime(today.year, today.month, today.day);
     
-    // Buscar logs do usuário para hoje
     final logsUrl = Uri.parse(
       '$baseUrl/log?idUsuario=$userId&dataSessao_gte=${todayStart.toIso8601String()}'
     );
@@ -46,9 +41,7 @@ class UserService {
     try {
       final logsResponse = await http.get(logsUrl);
       final List<dynamic> todayLogs = json.decode(logsResponse.body);
-      final vezesLogadoHoje = todayLogs.length + 1;
 
-      // Criar novo log
       final logUrl = Uri.parse('$baseUrl/log');
       final response = await http.post(
         logUrl,
@@ -57,7 +50,6 @@ class UserService {
           idUsuario: userId,
           emailUsuarioLogado: loggedUserEmail,
           dataSessao: DateTime.now(),
-          vezesLogadoHoje: vezesLogadoHoje,
         ).toJson()),
       );
 

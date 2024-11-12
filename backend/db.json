@@ -139,6 +139,26 @@
       "emailUsuarioLogado": "teste@luis.com",
       "dataSessao": "2024-11-12T01:59:26.621509",
       "vezesLogadoHoje": 1
+    },
+    {
+      "id": null,
+      "idUsuario": "1",
+      "emailUsuarioLogado": "luis@teste.com",
+      "dataSessao": "2024-11-12T02:04:22.116882",
+      "vezesLogadoHoje": 1
+    },
+    {
+      "id": "LOG_974517",
+      "idUsuario": "4722",
+      "emailUsuarioLogado": "teste@luis.com",
+      "dataSessao": "2024-11-12T02:19:34.516920",
+      "vezesLogadoHoje": 1
+    },
+    {
+      "id": "071942",
+      "idUsuario": "4722",
+      "emailUsuarioLogado": "teste@luis.com",
+      "dataSessao": "2024-11-12T02:21:11.942346"
     }
   ]
 }
